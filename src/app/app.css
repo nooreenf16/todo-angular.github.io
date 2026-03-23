@@ -1,0 +1,25 @@
+@reference "tailwindcss";
+
+.pending-task,
+.completed-task {
+  @apply items-center gap-3 border rounded-xl px-4 py-3.5 transition-all;
+}
+
+.pending-task {
+  @apply bg-slate-900 border-slate-800 hover:border-slate-700;
+}
+
+.completed-task {
+  @apply bg-slate-900/40 border-slate-800/50 hover:border-slate-700/50 opacity-55 hover:opacity-80 [&_span]:line-through;
+}
+
+.pending-task .actions,
+.completed-task .actions {
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+
+.pending-task:hover .actions,
+.completed-task:hover .actions {
+  opacity: 1;
+}
